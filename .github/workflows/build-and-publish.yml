@@ -38,6 +38,8 @@ jobs:
 
       - name: Publish artifacts
         run: |
-          ./gradlew publish
+          ./gradlew publish \
+            -Pgpr.user=${{ secrets.GH_USERNAME }} \
+            -Pgpr.token=${{ secrets.GH_TOKEN }}
 
     # Add more steps for release and publishing to package registry if needed
